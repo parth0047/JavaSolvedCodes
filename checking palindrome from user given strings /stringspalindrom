@@ -1,0 +1,62 @@
+package Interviewpratice;
+import java.util.Scanner;
+import java.lang.String;
+
+
+public class stringspalindrom {
+    public static void main(String X[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String str[]= new String[5];
+        System.out.println("Enter your 5 words \nNOTE:-Do no enter Spaces!!!:-");
+        for(int i=0; i<5 ; i++)
+        {
+            str[i]=sc.nextLine();
+
+        }
+        String temp;
+        int k=0;
+        int u=0;
+        int t;
+        boolean flag=false;
+        String palin[] = new String[5];
+        for(int i=0; i<5 ; i++)
+        {
+            t=str[i].length()-1;
+            k=0;
+            while(k<=t)
+            {
+
+                if(str[i].charAt(k)==str[i].charAt(t))
+                {
+
+                    flag=true;
+
+                }
+                else {
+                    flag=false;
+                    break;
+                }
+                k++;
+                t--;
+            }
+            if(flag==true)
+            {
+                palin[u]=str[i];
+                u++;
+
+            }
+            flag=false;
+
+        }
+        System.out.println("\n\nThe Palindrome Strings out of 5 user given words are:: ");
+        for( String s : palin)
+        {
+
+            if(s != null)
+                 System.out.println(s);
+        }
+
+
+    }
+}
